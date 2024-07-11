@@ -1,8 +1,9 @@
 package com.project.user.bo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.user.entity.UserEntity;
 import com.project.user.repository.UserRepository;
@@ -12,11 +13,12 @@ public class UserBO {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public UserEntity getUserLoginId(String loginId) {
-		return userRepository.findByLoginId(loginId);
+	public List<UserEntity> getUserByUserId(String userId) {
+		return userRepository.findByUserId(userId);
 	}
-	public UserEntity getUserPassword(String password) {
-		return userRepository.findByPassword(password);
+	
+	public List<UserEntity> getUserByUserIdAndPassword(String userId, String password) {
+		return userRepository.findByUserIdAndPassword(userId, password);
 	}
 	
 	public UserEntity addUser(String userId,String password,String name,String email
@@ -30,4 +32,8 @@ public class UserBO {
 									.admin(admin)
 									.build());	
 	}
+	
+//	public int deleteUserById(int id) {
+//		return userRepository.deleteUserById(id);
+//	}
 }

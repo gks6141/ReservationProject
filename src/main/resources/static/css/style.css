@@ -1,0 +1,32 @@
+header{
+	height:100px;
+}
+section{
+	height:800px;
+}
+footer{
+	height:100px;
+}
+
+table{
+
+	border-collapse: collapse;
+}
+
+tr{
+	border: solid 1px ;
+}
+td{
+	width: 600px;
+}
+
+th{
+	width:300px;
+	border: solid 1px ;
+}
+
+#joinBTN{
+	width:200px;
+	height: 60px;
+	font-size:25px;
+}
